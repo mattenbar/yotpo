@@ -13,7 +13,7 @@ export const addReview = (data) => {
     .then(review=> {
       if (review.success) {
         alert(review.success)
-        console.log(review)
+        dispatch({type: 'ADD_REVIEW', payload: review})
         
       } else if (review.errors) {
       

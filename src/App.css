@@ -1,4 +1,13 @@
 
+.newReviewContainer h1{
+  margin-left: 1em;
+}
+
+.reviewsContainer h1{
+  margin-left: 1em;
+}
+
+
 
 .review{
   border: black 1px solid;
@@ -23,6 +32,10 @@
 
 .newReview button{
   margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+.review button {
   margin-bottom: 1em;
 }
 
