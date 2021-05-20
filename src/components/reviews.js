@@ -28,7 +28,7 @@ class Reviews extends React.Component{
           <h4>id: {r.id}</h4>
           <h4>Content: {r.content}</h4>
           <h4>rating: {r.score}</h4>
-          test
+          test 2
         </div>
         )
       }
