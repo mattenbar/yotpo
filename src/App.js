@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import Reviews from './components/reviews'
+import NewReview from './components/newReview'
 
 class App extends React.Component{
 
@@ -10,6 +11,7 @@ class App extends React.Component{
   render(){
     return(
       <div className="App">
+        <NewReview />
         <Reviews />
       </div>
     )

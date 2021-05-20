@@ -8,18 +8,22 @@ class Reviews extends React.Component{
   }
   
   componentDidMount() {
-    fetch('https://api.yotpo.com/v1/apps/yqGNRSNYfvNyAt0cqAnknRn8ZY8CzmZjbpDdvXlB/reviews?utoken=S1lfzSrxmSi2pBUqXERPJLV6mKtxVm0yWV3q2JrY'
-    )
+    fetch('https://api.yotpo.com/v1/apps/yqGNRSNYfvNyAt0cqAnknRn8ZY8CzmZjbpDdvXlB/reviews?utoken=S1lfzSrxmSi2pBUqXERPJLV6mKtxVm0yWV3q2JrY')
       .then(response => response.json())
       .then(data => 
         this.setState(
           {reviews: data.reviews}
         )
     )
+
+    fetch('https://api.yotpo.com/v1/apps/yqGNRSNYfvNyAt0cqAnknRn8ZY8CzmZjbpDdvXlB/products?utoken=S1lfzSrxmSi2pBUqXERPJLV6mKtxVm0yWV3q2JrY')
+    .then(response => response.json())
+      .then(data => 
+        console.log(data)
+      )
   }
 
   render(){
-    console.log(this.state.reviews[0])
     if (this.state.reviews.length > 0 ){
       let reviewDiv = this.state.reviews.map((r) =>
       {return(
@@ -28,7 +32,6 @@ class Reviews extends React.Component{
           <h4>id: {r.id}</h4>
           <h4>Content: {r.content}</h4>
           <h4>rating: {r.score}</h4>
-          test 2
         </div>
         )
       }

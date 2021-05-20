@@ -1,0 +1,24 @@
+export const addReview = (data) => {
+
+  return (dispatch) => {
+    fetch('https://api.yotpo.com/v1/widget/reviews', {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(review=> {
+      if (review.success) {
+        alert(review.success)
+        console.log(review)
+        
+      } else if (review.errors) {
+      
+      alert(review.errors.map(error => error))
+      }
+    })
+  }
+}
