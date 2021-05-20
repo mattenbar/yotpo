@@ -1,10 +1,42 @@
 
+.newReviewContainer h1{
+  margin-left: 1em;
+}
+
+.reviewsContainer h1{
+  margin-left: 1em;
+}
+
+
 
 .review{
   border: black 1px solid;
   margin: 2em;
   width: 25%;
   text-align: center;
+}
+
+.newReview{
+  border: black 1px solid;
+  margin: 2em;
+  width: 25%;
+}
+
+.reviewForm{
+  margin: 1em;
+}
+
+.reviewForm input{
+  margin-left: 1em;
+}
+
+.newReview button{
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+.review button {
+  margin-bottom: 1em;
 }
 
 @keyframes App-logo-spin {
