@@ -51,6 +51,8 @@ class NewReview extends React.Component{
   }
 
   render(){
+    if(this.props.products){
+    console.log(this.props.products[2].name)}
     return(
       <div className='newReviewContainer'>
         <h1>NEW REVIEW:</h1>

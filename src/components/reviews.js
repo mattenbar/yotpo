@@ -30,7 +30,7 @@ class Reviews extends React.Component{
             .catch(err => console.error('error:' + err));
         
           } 
-        console.log(r)
+
         return(
         <div className='review' key={r.id}>
           <h3>Title: {r.title}</h3>
