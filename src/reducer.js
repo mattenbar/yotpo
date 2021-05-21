@@ -4,15 +4,19 @@ export default function manageReviews(state = [], action) {
         return {
           ...state,
           reviews: action.payload
-          // state.concat(action.payload);
         }
-
+      
+      case "FETCH_ORDERS":
+        return {
+          ...state,
+          orders: action.payload
+      }
+      
       case "FETCH_PRODUCTS":
         return {
           ...state,
           products: action.payload
-          // state.concat(action.payload);
-        }
+      }
       
       case 'ADD_REVIEW':
         return state.concat(action.payload);

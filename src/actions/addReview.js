@@ -10,15 +10,11 @@ export const addReview = (data) => {
       body: JSON.stringify(data)
     })
     .then(response => response.json())
-    .then(review=> {
-      if (review.success) {
-        alert(review.success)
-        dispatch({type: 'ADD_REVIEW', payload: review})
-        
-      } else if (review.errors) {
-      
-      alert(review.errors.map(error => error))
-      }
+    .then(data => {
+      console.log(data)
+      dispatch({type: 'ADD_REVIEW', payload: review})
     })
+    .catch(err => console.error('error:' + err));
   }
-}
+
+} 
