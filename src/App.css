@@ -7,6 +7,9 @@
   margin-left: 1em;
 }
 
+.newOrderContainer h1{
+  margin-left: 1em;
+}
 
 
 .review{
@@ -20,6 +23,24 @@
   border: black 1px solid;
   margin: 2em;
   width: 25%;
+}
+
+.newOrder{
+  border: black 1px solid;
+  margin: 2em;
+  width: 25%;
+}
+.orderForm{
+  margin: 1em;
+}
+
+.orderForm input{
+  margin-left: 1em;
+}
+
+.newOrder button{
+  margin-left: 1em;
+  margin-bottom: 1em;
 }
 
 .reviewForm{

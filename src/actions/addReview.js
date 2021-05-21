@@ -12,7 +12,7 @@ export const addReview = (data) => {
     .then(response => response.json())
     .then(data => {
       console.log(data)
-      dispatch({type: 'ADD_REVIEW', payload: review})
+      dispatch({type: 'ADD_REVIEW', payload: data})
     })
     .catch(err => console.error('error:' + err));
   }
