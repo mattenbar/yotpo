@@ -52,19 +52,28 @@ class NewReview extends React.Component{
 
   render(){
     if(this.props.products){
-    console.log(this.props.products[2].name)}
+      
+    let productsListID = this.props.products.map(product => product.images.length === 0 ? null:   <option key={product.id} value={product.id} name="sku" onChange={this.handleReviewChange}> {product.id} - {product.name}</option>)
+    let productsListName = this.props.products.map(product => product.images.length === 0 ? null: <option key={product.name} value={product.product_title} name="product_title" onChange={this.handleReviewChange}> {product.name}</option>)
+    
     return(
       <div className='newReviewContainer'>
         <h1>NEW REVIEW:</h1>
         <div className="newReview">
         <form onSubmit={this.handleReviewSubmit}>
           <div className='reviewForm'>
-            <label>Product id</label>
-            <input onChange={this.handleReviewChange} type="text" value={this.state.review.sku} name="sku" />
+            <label>Product id</label><br/><br/>
+            <select value={this.state.review.sku} name="sku" onChange={this.handleReviewChange}>
+              <option >Choose Product...</option>
+              {productsListID}
+            </select>
           </div>
           <div className='reviewForm'>
-            <label>Product Title</label>
-            <input onChange={this.handleReviewChange} type="text" value={this.state.review.product_title} name="product_title" />
+            <label>Product Name - must match name above</label><br/><br/>
+            <select value={this.state.review.product_title} name="product_title" onChange={this.handleReviewChange}>
+              <option >Choose Product...</option>
+              {productsListName}
+            </select>
           </div>
           <div className='reviewForm'>
             <label>Title</label>
@@ -84,7 +93,7 @@ class NewReview extends React.Component{
           </div>
           <div className='reviewForm'>
             <label>Review Score: input 1-5</label>
-            <input onChange={this.handleReviewChange} type="text" value={this.state.review.review_score} name="review_score" />
+            <input onChange={this.handleReviewChange} type="number" min="1" max="5" value={this.state.review.review_score} name="review_score" />
           </div>
           <button type="submit">Submit</button>
         </form>
@@ -92,6 +101,15 @@ class NewReview extends React.Component{
       </div>
       
     )
+  
+  }else{
+    return(
+      <>
+
+      </>
+    )
+  }
+    
   }
   
 
