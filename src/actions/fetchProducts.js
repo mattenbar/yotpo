@@ -7,6 +7,7 @@ export function fetchProducts(data){
     fetch('https://api.yotpo.com/v1/apps/yqGNRSNYfvNyAt0cqAnknRn8ZY8CzmZjbpDdvXlB/products?utoken=S1lfzSrxmSi2pBUqXERPJLV6mKtxVm0yWV3q2JrY&count=100')
       .then(res => res.json())
       .then(data => {
+        console.log(data)
         dispatch({type: FETCH_PRODUCTS, payload: data.products})
       })
       .catch(err => console.error('error:' + err));

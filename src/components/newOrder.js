@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {createOrder} from '../actions/createOrder';
 
 class NewOrder extends React.Component{
+  
 
   state = {
     order:{
@@ -10,7 +11,7 @@ class NewOrder extends React.Component{
       "utoken": "S1lfzSrxmSi2pBUqXERPJLV6mKtxVm0yWV3q2JrY",
       "email": "",
       "customer_name": "",
-      "order_id": Math.random()*10000,
+      "order_id": "",
       "order_date": "",
       "currency_iso": "USD",
       "products": {
@@ -45,13 +46,14 @@ class NewOrder extends React.Component{
     })
   }
 
+
   handleOrderSubmit = (e) => {
-    
     e.preventDefault()
+    this.state.order.order_id = Math.floor(Math.random()*10000)
     this.props.dispatchCreateOrder(this.state.order)
     this.setState({
       order:{
-        "platform": "general",
+        "platform": "shopify",
         "utoken": "S1lfzSrxmSi2pBUqXERPJLV6mKtxVm0yWV3q2JrY",
         "email": "",
         "customer_name": "",
@@ -66,12 +68,12 @@ class NewOrder extends React.Component{
             "description": "this is the description of a product",
             "price": "100",
             "specs": {
-              "upc": "USB",
-              "mpn": "100-100-0.100-1000-A",
-              "brand": "samplebrand",
-              "isbn": "thingy",
-              "ean": "0012345678905",
-              "external_sku":"000SKU123",
+            "upc": "USB",
+            "mpn": "100-100-0.100-1000-A",
+            "brand": "samplebrand",
+            "isbn": "thingy",
+            "ean": "0012345678905",
+            "external_sku":"000SKU123",
             },
             "product_tags": "book"
           }
@@ -83,7 +85,6 @@ class NewOrder extends React.Component{
   render(){
     if(this.props.products){
       
-    let productsList = this.props.products.map(product => product.images.length === 0 ? null:   <option key={product.id} value={product} name="sku" onChange={this.handleOrderChange}> {product.id} - {product.name}</option>)
    
     return(
       <div className='newOrderContainer'>
@@ -91,11 +92,7 @@ class NewOrder extends React.Component{
         <div className="newOrder">
         <form onSubmit={this.handleOrderSubmit}>
           <div className='orderForm'>
-            <label>Product</label><br/><br/>
-            <select value={this.state.product} name="products" onChange={this.handleOrderChange}>
-              <option >Choose Product...</option>
-              {productsList}
-            </select>
+            <label>Order My Favorite Product</label><br/><br/>
           </div>
           
           <div className='orderForm'>

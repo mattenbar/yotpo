@@ -1,7 +1,6 @@
 export const createOrder = (data) => {
-  debugger
   return (dispatch) => {
-    fetch('https://api.yotpo.com/apps/app_key/purchases/', {
+    fetch('https://api.yotpo.com/apps/yqGNRSNYfvNyAt0cqAnknRn8ZY8CzmZjbpDdvXlB/purchases/', {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'

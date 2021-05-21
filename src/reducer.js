@@ -1,4 +1,4 @@
-export default function manageReviews(state = [], action) {
+export default function manageReviews(state = [], action, ) {
   switch (action.type) {
       case "FETCH_REVIEWS":
         return {
@@ -22,6 +22,11 @@ export default function manageReviews(state = [], action) {
         return {
           ...state,
           reviews: [...state.reviews, action.payload]
+        }
+
+      case 'CREATE_ORDER':
+        return {
+          ...state
         }
   
       default:

@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 import Reviews from './components/reviews'
+import Orders from './components/orders'
 import NewReview from './components/newReview'
 import NewOrder from './components/newOrder'
 
@@ -27,6 +28,7 @@ class App extends React.Component{
         <NewReview />
         <Reviews />
         <NewOrder />
+        <Orders />
       </div>
     )
   }
